@@ -215,21 +215,21 @@
         return "0x"+(parseFloat(this.staking.amount) * 10**this.token.decimals).toString(16);
       },
       balanceText() {
-        if(!this.$root.web3.account) return trans('basic.connect_wallet');
+        if(!this.$root.web3.account) return this.trans('basic.connect_wallet');
         return this.loading.balance ? 'Loading' : `${this.$root.formatTokenBalanceText(this.token.balance, this.token.decimals, 4).toString()} ${this.token.symbol}`;
       },
       myStake() {
         return this.staking.vaults.reduce((acc, o) => Number(acc) + Number(o[2]), 0);
       },
       myStakeText() {
-        if(!this.$root.web3.account) return trans('basic.connect_wallet');
+        if(!this.$root.web3.account) return this.trans('basic.connect_wallet');
         return `${this.$root.formatTokenBalanceText(this.myStake, this.token.decimals, 2).toString()} ${this.token.symbol}`;
       },
       myRewards() {
         return this.staking.vaults.reduce((acc, o) => Number(acc) + Number(o[3] || 0), 0);
       },
       myRewardsText() {
-        if(!this.$root.web3.account) return trans('basic.connect_wallet');
+        if(!this.$root.web3.account) return this.trans('basic.connect_wallet');
         return `${this.$root.formatTokenBalanceText(this.myRewards, this.token.decimals, 2).toString()} ${this.token.symbol}`;
       },
       totalStakedText() {

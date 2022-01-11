@@ -1256,12 +1256,6 @@ async testTransaction() {
   created() {
     let vue = this;
     vue.init();
-
-    // vue.testTransaction();
-
-
-
-
   }
 
 }).$mount('#app');
